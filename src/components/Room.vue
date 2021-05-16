@@ -1,5 +1,8 @@
 <template>
-  <div class="px-6 pt-6 pb-4">
+  <div class="flex flex-row items-center px-2 sm:px-6 pt-6 pb-4">
+    <router-link :to="{name: 'rooms'}" class="inline-flex sm:hidden items-center p-1.5 mr-2 border border-gray-300 shadow-sm text-xs font-medium rounded text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+      <mdicon name="chevron-left" />
+    </router-link>
     <h2 class="text-lg font-medium text-gray-900">{{ room.Name }}</h2>
   </div>
 
