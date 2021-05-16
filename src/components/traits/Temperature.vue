@@ -1,19 +1,21 @@
 <template>
-	<div class="flex row">
-		<label>Temp: {{device.Temperature}}</label>
-	</div>
+	<label class="flex row items-center">
+		<mdicon name="thermometer" />
+		<span v-if="device">{{ device.Temperature }}°C</span>
+		<span v-else-if="room">{{ room.getAverageTemperature() }}°C</span>
+	</label>
 </template>
 
 <script lang="ts">
-import { Device } from 'ohg-connector';
+import { Device, Room } from 'ohg-connector';
 import { Options, Vue } from 'vue-class-component';
 
 @Options({
   props: {
-    device!: Device
+    device: Device,
+    room: Room,
   }
 })
 export default class Temperature extends Vue {
-	device!: Device;
 }
 </script>

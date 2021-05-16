@@ -1,13 +1,14 @@
 <template>
-	<!-- <div class="flex">
-		<button v-if="device.Status" class="bg-success-500 hover:bg-success-700 text-white font-bold py-6 px-8 rounded-lg | flex-grow" @click="Control()">Turn off</button>
-		<button v-else class="bg-danger-500 hover:bg-danger-700 text-white font-bold py-6 px-8 rounded-lg | flex-grow" @click="Control()">Turn on</button>
-	</div> -->
-	<toggle :enabled="device.Status" @click="Control()" />
+	<toggle v-if="device" :enabled="device.Status" @click="Control()" />
+
+	<div v-else-if="room" class="flex">
+		<button class="bg-danger-500 hover:bg-danger-700   text-white font-bold h-10 w-20 rounded-l-lg | flex-grow" @click="Control(false)">{{ $t('components.onOff.off') }}</button>
+		<button class="bg-success-500 hover:bg-success-700 text-white font-bold h-10 w-20 rounded-r-lg | flex-grow" @click="Control(true)">{{ $t('components.onOff.on') }}</button>
+	</div>
 </template>
 
 <script lang="ts">
-import { Device } from 'ohg-connector';
+import { Device, Room } from 'ohg-connector';
 import { Options, Vue } from 'vue-class-component';
 import { Toggle } from '@/components/elements';
 
@@ -16,21 +17,23 @@ import { Toggle } from '@/components/elements';
 		Toggle
 	},
 	props: {
-		device!: Device
+		device: Device,
+		room: Room,
+		devType: String
 	}
 })
 export default class OnOff extends Vue {
-	device!: Device;
+	device?: Device;
+	room?: Room;
+	devType?: string;
 
-	public Control(): void {
-		this.device.Toggle()
-	}
-
-	public WrittenStatus(): string {
-		if (this.device.Status) 
-			return 'On';
-		else
-			return 'Off';
+	public Control(status?: boolean): void {
+		if (this.device) {
+			this.device.Toggle()
+		}
+		else if (this.room) {
+			window.backendConnection.sendRoomCommand(this.room._id, this.devType ?? '', status ? 'on' : 'off');
+		}
 	}
 }
 </script>

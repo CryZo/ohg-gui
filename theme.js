@@ -1,10 +1,10 @@
 // theme.js
 module.exports = {
   themeColors: {
-    primary: "#adf43a",
-    secondary: "#50f43a",
+    primary: "#B3D2B2",
+    secondary: "#4C6663",
     warning: "#f2c500",
-    success: "#1fce6d",
-    danger: "#db1e1e"
+    success: "#5dc65f",
+    danger: "#ef6b6b"
   }
 };

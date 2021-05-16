@@ -15,6 +15,10 @@
             "open": "Open",
             "close": "Close",
             "stop": "Stop"
+        },
+        "onOff": {
+            "on": "On",
+            "off": "Off"
         }
     },
     "deviceTypes": {

@@ -17,9 +17,6 @@
               </div>
             </TransitionChild>
             <div class="pt-5 pb-4">
-              <div class="flex-shrink-0 flex items-center px-4">
-                <img class="h-8 w-auto" src="https://tailwindui.com/img/logos/workflow-mark.svg?color=blue&shade=600" alt="Workflow" />
-              </div>
               <nav aria-label="Sidebar" class="mt-5">
                 <div class="px-2 space-y-1">
                   <router-link v-for="item in navigation" :key="item.name" :to="item.to" class="group p-2 rounded-md flex items-center text-base font-medium text-blue-gray-600 hover:bg-blue-gray-50 hover:text-blue-gray-900">
@@ -43,7 +40,9 @@
         <div class="flex flex-col h-0 flex-1 overflow-y-auto bg-primary-600">
           <div class="flex-1 flex flex-col">
             <div class="flex-shrink-0 bg-primary-700 py-4 flex items-center justify-center">
-              <img class="h-8 w-auto" src="https://tailwindui.com/img/logos/workflow-mark.svg?color=white" alt="Workflow" />
+              <router-link :to="{name: 'dashboard'}">
+                <img class="h-8 w-auto" src="https://tailwindui.com/img/logos/workflow-mark.svg?color=white" alt="Workflow" />
+              </router-link>
             </div>
             <nav aria-label="Sidebar" class="py-6 flex flex-col items-center space-y-3">
               <router-link v-for="item in navigation" :key="item.name" :to="item.to" class="flex items-center p-4 rounded-lg text-primary-900 hover:bg-primary-700">
@@ -61,7 +60,9 @@
       <div class="lg:hidden">
         <div class="bg-primary-600 py-2 px-4 flex items-center justify-between sm:px-6">
           <div>
-            <img class="h-8 w-auto" src="https://tailwindui.com/img/logos/workflow-mark.svg?color=white" alt="Workflow" />
+            <router-link :to="{name: 'dashboard'}">
+              <img class="h-8 w-auto" src="https://tailwindui.com/img/logos/workflow-mark.svg?color=white" alt="Workflow" />
+            </router-link>
           </div>
           <div>
             <button type="button" class="-mr-3 h-12 w-12 inline-flex items-center justify-center bg-primary-600 rounded-md text-white hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" @click="mobileMenuOpen = true">
@@ -94,11 +95,15 @@ import { Dialog, DialogOverlay, TransitionChild, TransitionRoot } from '@headles
 })
 export default class App extends Vue {
   mobileMenuOpen = false;
-  navigation = [
-    { name: 'Dashboard', to: {name: 'dashboard'}, icon: 'home' },
-    { name: 'Rooms', to: {name: 'rooms'}, icon: 'cube-outline' },
-    { name: 'Charts', to: {name: 'charts'}, icon: 'chart-areaspline' },
-    { name: 'Messages', to: {name: 'messages'}, icon: 'message-text-outline' },
+  navigation: any[] = [];
+
+  mounted() {
+    this.navigation = [
+    { name: this.$t('pages.dashboard.title'), to: {name: 'dashboard'}, icon: 'home' },
+    { name: this.$t('components.rooms.title'), to: {name: 'rooms'}, icon: 'cube-outline' },
+    // { name: 'Charts', to: {name: 'charts'}, icon: 'chart-areaspline' },
+    // { name: 'Messages', to: {name: 'messages'}, icon: 'message-text-outline' },
   ];
+  }
 }
 </script>
