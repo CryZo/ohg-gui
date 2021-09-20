@@ -19,6 +19,7 @@
 
 <script lang="ts">
 import { Device, Room } from 'ohg-connector';
+import { DeviceType } from 'ohg-connector/dist/Enums';
 import { defineAsyncComponent } from 'vue';
 import { Options, Vue } from 'vue-class-component';
 
@@ -31,6 +32,7 @@ import { Options, Vue } from 'vue-class-component';
 export default class Devices extends Vue {
   private room?: Room;
   private devices: Device[] = [];
+  private deviceTypes: DeviceType[] = [];
   private interval?: number;
   private autoGoBackTimeout?: number;
 
@@ -45,6 +47,9 @@ export default class Devices extends Vue {
         r.Devices.forEach(d => {
           if (`${d.Type}` === this.$route.params.type)
             this.devices.push(d);
+
+          if (!this.deviceTypes.includes(d.Type))
+            this.deviceTypes.push(d.Type);
         });
       }
     });
@@ -64,6 +69,7 @@ export default class Devices extends Vue {
 
   async refreshAutoGoBack() {
     clearTimeout(this.autoGoBackTimeout);
+    if (this.deviceTypes.length <= 1) return;
     //Check if this is an mobile device and go back automatically on timeout
     // @ts-ignore
     const tw = await import('@/../tailwind.config');

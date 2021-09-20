@@ -19,7 +19,7 @@
             <div class="pt-5 pb-4">
               <nav aria-label="Sidebar" class="mt-5">
                 <div class="px-2 space-y-1">
-                  <router-link v-for="item in navigation" :key="item.name" :to="item.to" class="group p-2 rounded-md flex items-center text-base font-medium text-blue-gray-600 hover:bg-blue-gray-50 hover:text-blue-gray-900">
+                  <router-link v-for="item in navigation" :key="item.name" :to="item.to" @click="mobileMenuOpen = false" class="group p-2 rounded-md flex items-center text-base font-medium text-blue-gray-600 hover:bg-blue-gray-50 hover:text-blue-gray-900">
                     <mdicon :name="item.icon" class="mr-4 h-6 w-6 text-blue-gray-400 group-hover:text-blue-gray-500" aria-hidden="true" />
                     {{ item.name }}
                   </router-link>
