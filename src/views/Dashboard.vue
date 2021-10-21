@@ -1,11 +1,11 @@
 <template>
   <div class="min-h-screen">
-    <div as="header" class="pb-24 bg-gradient-to-r from-primary-500 md:to-primary-50 to-primary-200">
+    <div as="header" class="pb-24 bg-gradient-to-r from-primary-500 md:to-primary-50 to-primary-200 | dark:from-primary-900 dark:to-primary-800 md:dark:to-primary-800">
       <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:max-w-7xl lg:px-8">
         <div class="relative flex flex-wrap items-center justify-center lg:justify-between">
-          <div class="w-full py-5 lg:border-t lg:border-white lg:border-opacity-20">
+          <div class="w-full py-5 lg:border-t lg:border-white lg:dark:border-black lg:border-opacity-20">
             <div class="lg:grid lg:grid-cols-3 lg:gap-8 lg:items-center">
-              <h1 class="text-while text-2xl font-medium rounded-md bg-white bg-opacity-0 px-3 py-2 hover:bg-opacity-10">{{ $t('pages.dashboard.title') }}</h1>
+              <h1 class="text-black dark:text-primary-500 text-2xl font-medium rounded-md bg-white dark:bg-black bg-opacity-0 px-3 py-2 hover:bg-opacity-10">{{ $t('pages.dashboard.title') }}</h1>
             </div>
           </div>
         </div>
@@ -20,7 +20,7 @@
 
             <!-- Room panels -->
             <section v-for="room in rooms" :key="room._id" :aria-label="room.Name">
-              <div class="rounded-lg bg-white overflow-hidden shadow">
+              <div class="rounded-lg bg-white dark:bg-gray-900 overflow-hidden shadow">
                 <DashboardRoomHeader :room="room" />
                   
                 <ul class="divide-y divide-gray-200">

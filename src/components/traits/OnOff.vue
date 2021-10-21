@@ -2,8 +2,8 @@
 	<toggle v-if="device" :enabled="device.Status" @click="Control()" />
 
 	<div v-else-if="room" class="flex">
-		<button class="bg-danger-500 hover:bg-danger-700   text-white font-bold h-10 w-20 rounded-l-lg | flex-grow" @click="Control(false)">{{ $t('components.onOff.off') }}</button>
-		<button class="bg-success-500 hover:bg-success-700 text-white font-bold h-10 w-20 rounded-r-lg | flex-grow" @click="Control(true)">{{ $t('components.onOff.on') }}</button>
+		<button class="bg-danger-500 hover:bg-danger-700 dark:bg-danger-800 dark:hover:bg-danger-900   text-white font-bold h-10 w-20 rounded-l-lg | flex-grow" @click="Control(false)">{{ $t('components.onOff.off') }}</button>
+		<button class="bg-success-500 hover:bg-success-700 dark:bg-success-800 dark:hover:bg-success-900 text-white font-bold h-10 w-20 rounded-r-lg | flex-grow" @click="Control(true)">{{ $t('components.onOff.on') }}</button>
 	</div>
 </template>
 

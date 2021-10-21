@@ -1,16 +1,16 @@
 <template>
   <div class="min-h-full">
-    <div class="px-2 sm:px-6 pt-6 pb-4 border-b border-gray-200">
+    <div class="px-2 sm:px-6 pt-6 pb-4 border-b border-gray-200 dark:border-gray-700">
       <DevTypeControl v-if="room" :room="room" :type="$route.params.type">
-          <router-link :to="{name: 'room', params: {id: $route.params.id}}" class="inline-flex sm:hidden items-center p-1.5 mr-2 border border-gray-300 shadow-sm text-xs font-medium rounded text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+          <router-link :to="{name: 'room', params: {id: $route.params.id}}" class="inline-flex sm:hidden items-center p-1.5 mr-2 border border-gray-300 dark:border-gray-700 shadow-sm text-xs font-medium rounded text-gray-700 dark:text-gray-200 bg-white dark:bg-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500">
             <mdicon name="chevron-left" />
           </router-link>
-        <h2 class="text-lg font-medium text-gray-900">{{ $t(`deviceTypes.${$route.params.type}`) }}</h2>
+        <h2 class="text-lg font-medium text-gray-900 dark:text-gray-100">{{ $t(`deviceTypes.${$route.params.type}`) }}</h2>
       </DevTypeControl>
     </div>
 
-    <nav class="flex-1 min-h-0 overflow-y-auto bg-white" :aria-label="$t('components.devices.title')">
-      <ul class="divide-y divide-gray-200">
+    <nav class="flex-1 min-h-0 overflow-y-auto bg-white dark:bg-gray-900" :aria-label="$t('components.devices.title')">
+      <ul class="divide-y divide-gray-200 dark:divide-gray-700">
         <SingleDevice v-for="device in devices" :key="device._id" :device="device" />
       </ul>
     </nav>

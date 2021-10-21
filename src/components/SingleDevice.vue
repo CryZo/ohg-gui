@@ -1,8 +1,8 @@
 <template>
-  <li class="relative bg-white py-5 px-4 hover:bg-gray-50 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600">
+  <li class="relative bg-white dark:bg-gray-900 py-5 px-4 hover:bg-gray-50 dark:hover:bg-black focus-within:ring-2 focus-within:ring-inset focus-within:ring-primary-600">
     <div class="flex justify-between space-x-3">
       <div class="min-w-0 flex-1">
-        <div class="flex items-center | text-sm font-medium text-gray-900">
+        <div class="flex items-center | text-sm font-medium text-gray-900 dark:text-gray-100">
           <p class="truncate mr-auto">{{ device.Name }}</p>
 
           <!-- Small controls -->
