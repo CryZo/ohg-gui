@@ -36,6 +36,8 @@ export default class SliderInput extends Vue {
         background: var(--color-primary-100);
         border-radius: 14px;
         border: 0px solid var(--color-primary-100);
+
+        @apply dark:bg-gray-700;
     }
     input[type=range]::-webkit-slider-thumb {
         box-shadow: 0px 0px 0px #000000;

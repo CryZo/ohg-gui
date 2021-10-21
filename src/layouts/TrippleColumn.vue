@@ -11,10 +11,10 @@
     </nav> -->
 
     <div class="flex-1 flex xl:overflow-hidden">
-      <aside class="hidden xl:order-first xl:flex xl:flex-col flex-shrink-0 w-96 border-r border-gray-200">
+      <aside class="hidden xl:order-first xl:flex xl:flex-col flex-shrink-0 w-96 border-r border-gray-200 dark:border-gray-700">
         <router-view name="nav1" />
       </aside>
-      <aside class="hidden md:order-first md:flex md:flex-col flex-shrink-0 w-96 border-r border-gray-200">
+      <aside class="hidden md:order-first md:flex md:flex-col flex-shrink-0 w-96 border-r border-gray-200 dark:border-gray-700">
         <router-view name="nav2" />
       </aside>
 

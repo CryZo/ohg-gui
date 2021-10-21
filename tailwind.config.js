@@ -63,6 +63,8 @@ const colors = colorMerger([
 const shadowOutline = generateShadowOutlineStructure();
 
 module.exports = {
+  darkMode: 'media', // or 'media' or 'class'
+
   future: {
     defaultLineHeights: false,
     standardFontWeights: false,
@@ -83,7 +85,6 @@ module.exports = {
       'xl': '1280px',
       '2xl': '1536px',
     },
-    darkMode: 'media', // or 'media' or 'class'
     extend: {
       colors: {
         "black": "#0c0c0c",

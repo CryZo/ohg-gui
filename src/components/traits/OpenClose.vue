@@ -1,8 +1,8 @@
 <template>
 	<div class="flex flex-row flex-nowrap">
-		<button v-bind:class="{ active: IsActive('close') }" class="bg-gray-500 hover:bg-gray-700 text-white font-bold h-10 px-2 w-full rounded-l-lg" type="button" @click.prevent="Control('Closing')"><p>{{ $t('components.openClose.close') }}</p></button>
-		<button v-bind:class="{ active: IsActive('stop') }" class="bg-danger-500 hover:bg-danger-700 text-white font-bold h-10 px-2 w-full | col-span-2" type="button" @click.prevent="Control('Stop')"><p>{{ $t('components.openClose.stop') }}</p></button>
-		<button v-bind:class="{ active: IsActive('open') }" class="bg-gray-500 hover:bg-gray-700 text-white font-bold h-10 px-2 w-full rounded-r-lg" type="button" @click.prevent="Control('Opening')"><p>{{ $t('components.openClose.open') }}</p></button>
+		<button v-bind:class="{ active: IsActive('close') }" class="bg-gray-500 hover:bg-gray-700 dark:bg-gray-700 dark:hover:bg-gray-800 text-white font-bold h-10 px-2 w-full rounded-l-lg" type="button" @click.prevent="Control('Closing')"><p>{{ $t('components.openClose.close') }}</p></button>
+		<button v-bind:class="{ active: IsActive('stop') }"  class="bg-danger-500 hover:bg-danger-700 dark:bg-danger-800 dark:hover:bg-danger-900 text-white font-bold h-10 px-2 w-full | col-span-2" type="button" @click.prevent="Control('Stop')"><p>{{ $t('components.openClose.stop') }}</p></button>
+		<button v-bind:class="{ active: IsActive('open') }"  class="bg-gray-500 hover:bg-gray-700 dark:bg-gray-700 dark:hover:bg-gray-800 text-white font-bold h-10 px-2 w-full rounded-r-lg" type="button" @click.prevent="Control('Opening')"><p>{{ $t('components.openClose.open') }}</p></button>
 	</div>
 </template>
 

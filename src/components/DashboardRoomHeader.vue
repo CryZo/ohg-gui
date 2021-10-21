@@ -1,8 +1,8 @@
 <template>
-  <div class="bg-white border-b border-gray-200 transition-colors duration-300" :class="{'bg-primary-200': !!selected}">
+  <div class="bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-700 transition-colors duration-300" :class="{'bg-primary-200 dark:bg-primary-800': !!selected}">
     <div v-if="!selected" class="pl-4 sm:pl-6 pr-2 pt-5 pb-2">
       <div class="flex flex-row items-center">
-        <h3 class="mr-auto text-lg leading-6 font-medium text-gray-900">{{ room.Name }}</h3>
+        <h3 class="mr-auto text-lg leading-6 font-medium text-gray-900 dark:text-gray-100">{{ room.Name }}</h3>
 
         <temperature v-if="!isNaN(room.getAverageTemperature())" class="ml-1" :room="room"></temperature>
         <humidity    v-if="!isNaN(room.getAverageHumidity())"    class="ml-1" :room="room"></humidity>
@@ -20,7 +20,7 @@
         <button v-if="!!selected" @click="selected = false" type="button" class="inline-flex items-center ml-1 border border-transparent rounded-full shadow-sm text-white bg-secondary-600 hover:bg-secondary-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-secondary-500">
           <mdicon name="close" />
         </button>
-        <h3 class="ml-2 text-lg leading-6 font-medium text-gray-900">{{ room.Name }}</h3>
+        <h3 class="ml-2 text-lg leading-6 font-medium text-gray-900 dark:text-gray-100">{{ room.Name }}</h3>
       </DevTypeControl>
     </div>
   </div>

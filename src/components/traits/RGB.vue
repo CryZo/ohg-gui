@@ -1,5 +1,5 @@
 <template>
-	<input class="h-10 w-20" type="color" name="favcolor" :value="CurrentColor()" @change="Control($event)">
+	<input class="h-10 w-20 dark:bg-transparent" type="color" name="favcolor" :value="CurrentColor()" @change="Control($event)">
 </template>
 
 <script lang="ts">
